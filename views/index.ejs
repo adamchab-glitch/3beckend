@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo">Moje stránka</a>
+      <ul>
+        <li><a href="#uvod">Úvod</a></li>
+        <li><a href="#o-nas">O nás</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="uvod" class="hero">
+      <h1>Vítejte na mé stránce</h1>
+      <p>Toto je základní stránka, kterou můžete dál upravovat.</p>
+      <a href="#kontakt" class="btn">Kontaktujte nás</a>
+    </section>
+
+    <section id="o-nas">
+      <h2>O nás</h2>
+      <p>Sem napište něco o sobě nebo o svém projektu.</p>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <% if (zprava) { %>
+        <p class="zprava"><%= zprava %></p>
+      <% } %>
+      <form action="/kontakt" method="POST">
+        <label for="jmeno">Jméno</label>
+        <input type="text" id="jmeno" name="jmeno" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="zprava">Zpráva</label>
+        <textarea id="zprava" name="zprava" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Odeslat</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Moje stránka</p>
+  </footer>
+</body>
+</html>
